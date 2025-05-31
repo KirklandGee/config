@@ -139,10 +139,10 @@ truncate_to_repo = true
 read_only ="  "
 
 [directory.substitutions]
-"Documents" = "  "
-"Downloads" = "  "
-"Music" = "  "
-"Pictures" = "  "
+"Documents" = " 󰈙"
+"Downloads" = " 󰉍"
+"Music" = " 󰝚"
+"Pictures" = " 󰉏"
 
 [c]
 symbol = " "
@@ -188,13 +188,13 @@ style = "bg:fourth fg:white"
 format = '[$symbol($version) ]($style)'
 
 [nodejs]
-symbol = " "
+symbol = " "
 version_format = "${raw}"
 style = "bg:fourth fg:white"
 format = '[$symbol($version) ]($style)'
 
 [rust]
-symbol = " "
+symbol = "󱘗 "
 version_format = "${raw}"
 style = "bg:fourth fg:white"
 format = '[$symbol($version) ]($style)'
