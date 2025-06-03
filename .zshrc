@@ -46,6 +46,24 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
+# macOS-style keyboard shortcuts for zsh
+
+# Basic navigation
+bindkey "^A" beginning-of-line           # Command + Left
+bindkey "^E" end-of-line                 # Command + Right
+bindkey "^[b" backward-word              # Option + Left
+bindkey "^[f" forward-word               # Option + Right
+
+# Deletion
+bindkey "^[^?" backward-kill-word        # Option + Delete
+bindkey "^U" backward-kill-line          # Command + Delete
+
+# Standard keys
+bindkey "^[[3~" delete-char              # Delete
+bindkey "^[[H" beginning-of-line         # Home
+bindkey "^[[F" end-of-line               # End
+
+
 # History
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -74,5 +92,8 @@ alias c='clear'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
+eval "$(temporal completion zsh)"
+eval "$(direnv hook zsh)"
 
 export PATH=~/.npm-global/bin:$PATH
+. "$HOME/.local/bin/env"
