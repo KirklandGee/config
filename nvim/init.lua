@@ -16,7 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 vim.wo.relativenumber = true
 
-require("vim-setup")
+require("vim_setup")
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
