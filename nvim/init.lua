@@ -1,8 +1,3 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -19,10 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+vim.wo.relativenumber = true
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
+require("vim-setup")
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -36,20 +30,3 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
-
--- Treesitter configuration
-local ts_config = require("nvim-treesitter.configs")
-ts_config.setup({
-  ensure_installed = {
-    "lua", 
-    "typescript", 
-    "python", 
-    "rust", 
-    "ruby"
-  },
-  highlight = { enable = true },
-  indent = { enable = true },
-})
-
--- Neotree Configurations
-vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>')
